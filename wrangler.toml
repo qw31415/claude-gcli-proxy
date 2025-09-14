@@ -1,0 +1,22 @@
+name = "claude-gcli-proxy"
+main = "src/index.ts"
+compatibility_date = "2024-01-15"
+compatibility_flags = ["nodejs_compat"]
+
+# Environment variables for production
+[env.production.vars]
+# Set these in Cloudflare Workers dashboard or via wrangler secret
+# GCLI2API_URL = "https://your-gcli2api-deployment.com"
+# GCLI2API_PASSWORD = "your-password"
+# CORS_ORIGIN = "*"  # Optional: restrict CORS to specific origins
+
+[env.production.secrets]
+# Use wrangler secret put to set these:
+# wrangler secret put GCLI2API_URL --env production
+# wrangler secret put GCLI2API_PASSWORD --env production
+
+# Development environment
+[env.development.vars]
+GCLI2API_URL = "http://localhost:8000"
+GCLI2API_PASSWORD = "dev-password"
+CORS_ORIGIN = "*"

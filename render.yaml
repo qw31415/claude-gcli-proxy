@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: claude-gcli-proxy
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: GCLI2API_URL
+        sync: false  # Set manually in Render dashboard
+      - key: GCLI2API_PASSWORD
+        sync: false  # Set manually in Render dashboard
+      - key: CORS_ORIGIN
+        value: "*"

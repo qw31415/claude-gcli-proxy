@@ -1,0 +1,33 @@
+{
+  "name": "claude-gcli-proxy",
+  "version": "1.0.0",
+  "description": "Proxy server to convert Claude API calls to gcli2api Gemini backend",
+  "main": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "deploy:production": "wrangler deploy --env production",
+    "tail": "wrangler tail",
+    "test": "vitest",
+    "type-check": "tsc --noEmit",
+    "build": "echo 'Build completed'",
+    "start": "node src/server.js"
+  },
+  "keywords": [
+    "claude",
+    "gemini",
+    "proxy",
+    "api",
+    "cloudflare-workers"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240919.0",
+    "typescript": "^5.0.0",
+    "vitest": "^1.0.0",
+    "wrangler": "^3.0.0"
+  },
+  "dependencies": {}
+}

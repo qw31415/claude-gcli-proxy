@@ -1,0 +1,38 @@
+{
+  "apiUrl": "https://your-proxy-deployment.com/v1/messages",
+  "apiKey": "sk-your-claude-api-key",
+  "models": [
+    {
+      "id": "claude-sonnet-4-20250514",
+      "name": "Claude Sonnet 4 (via Gemini 2.5 Pro MaxThinking)",
+      "contextWindow": 200000,
+      "maxTokens": 8192
+    },
+    {
+      "id": "claude-3-5-sonnet-20241022",
+      "name": "Claude 3.5 Sonnet (via Gemini 2.5 Pro MaxThinking)",
+      "contextWindow": 200000,
+      "maxTokens": 8192
+    },
+    {
+      "id": "claude-3-5-haiku-20241022",
+      "name": "Claude 3.5 Haiku (via Gemini 2.5 Flash)",
+      "contextWindow": 200000,
+      "maxTokens": 8192
+    },
+    {
+      "id": "claude-3-opus-20240229",
+      "name": "Claude 3 Opus (via Gemini 2.5 Pro MaxThinking)",
+      "contextWindow": 200000,
+      "maxTokens": 4096
+    }
+  ],
+  "defaultModel": "claude-sonnet-4-20250514",
+  "temperature": 0.7,
+  "requestTimeout": 300000,
+  "retries": 3,
+  "headers": {
+    "anthropic-version": "2023-06-01",
+    "user-agent": "Claude-Code-via-Gemini-Proxy/1.0"
+  }
+}
