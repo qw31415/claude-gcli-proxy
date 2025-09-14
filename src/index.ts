@@ -31,7 +31,12 @@ interface GeminiRequest {
 }
 
 const MODEL_MAPPING: Record<string, string> = {
-  // Claude models to Gemini models mapping
+  // Current Claude Code models
+  'claude-sonnet-4-20250514': 'gemini-2.5-pro-preview-05-06-maxthinking', // Default (Sonnet 4) - 强推理
+  'claude-opus-4.1': 'gemini-2.5-pro-preview-05-06-maxthinking', // Opus 4.1 - 复杂任务强推理
+  'claude-opus-4.1-20250106': 'gemini-2.5-pro-preview-05-06-maxthinking', // Opus 4.1 specific version
+
+  // Legacy Claude models
   'claude-3-5-sonnet-20241022': 'gemini-2.5-pro-preview-05-06-maxthinking',
   'claude-3-5-sonnet-20240620': 'gemini-2.5-pro-preview-05-06-maxthinking',
   'claude-3-5-haiku-20241022': 'gemini-2.5-flash',
@@ -39,11 +44,11 @@ const MODEL_MAPPING: Record<string, string> = {
   'claude-3-sonnet-20240229': 'gemini-2.5-pro-preview-05-06-maxthinking',
   'claude-3-haiku-20240307': 'gemini-2.5-flash',
 
-  // Default mappings based on your requirements
-  'claude-sonnet-4-20250514': 'gemini-2.5-pro-preview-05-06-maxthinking', // 强推理
+  // Generic model names
   'claude-3.5-sonnet': 'gemini-2.5-pro-preview-05-06-maxthinking', // 强推理
   'claude-3-haiku': 'gemini-2.5-flash', // 速度相对快
   'claude-3-opus': 'gemini-2.5-pro-preview-05-06-maxthinking', // 强推理
+  'claude-opus': 'gemini-2.5-pro-preview-05-06-maxthinking', // 强推理
 
   // Fallback to standard model
   'default': 'gemini-2.5-pro'
@@ -162,6 +167,15 @@ async function handleModels(request: Request, env: Environment): Promise<Respons
           owned_by: 'anthropic',
           permission: [],
           root: 'claude-sonnet-4-20250514',
+          parent: null
+        },
+        {
+          id: 'claude-opus-4.1',
+          object: 'model',
+          created: Date.now(),
+          owned_by: 'anthropic',
+          permission: [],
+          root: 'claude-opus-4.1',
           parent: null
         },
         {

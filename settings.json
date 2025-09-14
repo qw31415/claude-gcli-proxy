@@ -4,7 +4,13 @@
   "models": [
     {
       "id": "claude-sonnet-4-20250514",
-      "name": "Claude Sonnet 4 (via Gemini 2.5 Pro MaxThinking)",
+      "name": "Claude Sonnet 4（通过 Gemini 2.5 Pro MaxThinking）",
+      "contextWindow": 200000,
+      "maxTokens": 8192
+    },
+    {
+      "id": "claude-opus-4.1",
+      "name": "Claude Opus 4.1（通过 Gemini 2.5 Pro MaxThinking - 复杂任务）",
       "contextWindow": 200000,
       "maxTokens": 8192
     },
